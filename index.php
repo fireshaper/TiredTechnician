@@ -80,7 +80,7 @@
 								echo '<td width="33%"><img src="' . $cover . '" /></td>';
 								echo '<td width="33%"><b>' . $book_a['bookname'] . '</b><br />';
 								echo '<em>' . $book_a['authorname'] . '</em></td>';
-								echo '<td width="33%" style="text-align:center;vertical-align:middle"><a href="http://belowland.com/TiredTechnician/?bookid=' . $book_a['bookid'] . '"><button style="padding:15px 32px;background-color:#ffffc7;color:#333333;font-size:16px;font-weight:bold;">Add<br />Book</button></a></td>';
+								echo '<td width="33%" style="text-align:center;vertical-align:middle"><a href="?bookid=' . $book_a['bookid'] . '"><button style="padding:15px 32px;background-color:#ffffc7;color:#333333;font-size:16px;font-weight:bold;">Add<br />Book</button></a></td>';
 								echo '</tr>';
 							}	
 							echo '</table>';
