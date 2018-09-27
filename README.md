@@ -17,4 +17,3 @@ A Library Technician is
 ## Known Issues
 
 - If your search query is too broad it will time out. Try to use a more narrow search.
-- When queueing books in LazyLibrarian there is a bit of a delay. This is because the API doesn't return a response when you add the book to your Wanted list, so I added a sleep() command to make sure that queueing happens after the book is added.

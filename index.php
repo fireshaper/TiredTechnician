@@ -27,9 +27,8 @@
 			<div class="content">
 				<div class="info">
 					<?php
-						
-						require_once('settings.php');
 
+						require_once('settings.php');	
 
 						if (isset($_GET['bookid'])){
 							addBook($_GET['bookid']);
@@ -39,18 +38,18 @@
 							$addBookResult = file_get_contents($GLOBALS['url'] . '/api?apikey=' . $GLOBALS['apikey'] . '&cmd=addBook&id=' . $bookid );
 							if ($addBookResult == "OK"){
 								echo 'New Book added.<br />';
-								sleep(4);
 								queueBook($bookid);
 							}
 						}
 
 						function queueBook($bookid){
-							$queueBookResult = file_get_contents($GLOBALS['url'] . '/api?apikey=' . $GLOBALS['apikey'] . '&cmd=queueBook&id=' . $bookid);
-							if ($queueBookResult == "OK"){
-								echo 'Queueing book... please wait.';
-								sleep(2);
-								$forceBookSearch = file_get_contents($GLOBALS['url'] . '/api?apikey=' . $GLOBALS['apikey'] . '&cmd=forceBookSearch');
+							echo 'Queueing book, please wait.';
+							//$queueBookResult = file_get_contents($GLOBALS['url'] . '/api?apikey=' . $GLOBALS['apikey'] . '&cmd=queueBook&id=' . $bookid);
+							while (file_get_contents($GLOBALS['url'] . '/api?apikey=' . $GLOBALS['apikey'] . '&cmd=queueBook&id=' . $bookid) != "OK"){
+								echo '.';
 							}
+							echo '<br />Searching for NZBs, please check your downloader.';
+							$forceBookSearch = file_get_contents($GLOBALS['url'] . '/api?apikey=' . $GLOBALS['apikey'] . '&cmd=forceBookSearch');
 						}
 						?>
 				</div>
