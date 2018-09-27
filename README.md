@@ -1,0 +1,20 @@
+# TiredTechnician
+
+An easier way to add books straight to LazyLibrarian. 
+
+A Library Technician is
+
+> a skilled library and information professional trained to perform the day-to-day functions of a library, and assists librarians in the acquisition, preparation, and organization of information. They also assist library patrons in finding information.
+
+## To install
+
+- Create a folder in the root of your webserver called TiredTechnician.
+- Download all the files and unzip them into the folder.
+- Edit the settings.php file with your hostname:port and API from LazyLibrarian.
+- Browse to http://localhost/TiredTechnician.
+- Start searching for books.
+
+## Known Issues
+
+- If your search query is too broad it will time out. Try to use a more narrow search.
+- When queueing books in LazyLibrarian there is a bit of a delay. This is because the API doesn't return a response when you add the book to your Wanted list, so I added a sleep() command to make sure that queueing happens after the book is added.
