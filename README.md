@@ -17,3 +17,5 @@ A Library Technician is
 ## Known Issues
 
 - If your search query is too broad it will time out. Try to use a more narrow search.
+
+Special thanks to @philborman for both creating LazyLibrarian and his support in my project!
